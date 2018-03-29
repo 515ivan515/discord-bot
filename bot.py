@@ -12,6 +12,9 @@ from sys import version_info
 from collections import OrderedDict
 from datetime import datetime
 
+def decode(inp):
+    return "".join(map(lambda x: chr(ord(x) - 7), inp))
+
 okapiicon = """https://orig02.deviantart.net/d6e5/f/2013/184/5/6/56c80607908d203f4b516480701586af-d6bsxy5.png"""
 emoji_name1 = (":blob0w0:", ":blobamused:", ":blobangel:", ":blobangery:", ":blobangry:", ":blobastonished:", ":blobawkward:", ":blobaww:", ":blobconfounded:", ":blobconfused:", ":blobcool:", ":blobcry:", ":blobdead:", ":blobderpy:", ":blobdetective:", ":blobdevil:", ":blobdizzy:", ":blobdrool:", ":blobexpressionless:", ":blobeyes:", ":blobfacepalm:", ":blobfearful:", ":blobfrown:", ":blobfrowningbig:", ":blobgentle:")
 emoji_name2 = (":blobglare:", ":blobidea:", ":blobkir:", ":bloblul:", ":blobmoustache:", ":blobnauseated:", ":blobnelly:", ":blobnogood:", ":blobokhand:", ":blobonfire:", ":blobowoevil:", ":blobrain:", ":blobrick:", ":blobsleeping:", ":blobsleepless:", ":blobsmile:", ":blobsmirk:", ":blobspy:", ":blobthinking:", ":blobthumbsdown:", ":blobtilt:", ":blobunsure:", ":blobwoah:", ":discord:", ":python:")
@@ -93,7 +96,7 @@ async def serverinfo(ctx):
     ram_usage = process.memory_full_info().uss / 1024**2
     embed = discord.Embed(color=random.choice(colors))
     embed.add_field(name="#\u20e3 Server Statistics:", value="**Guilds**: {}\n**Channels**: {}\n**Users**: {}".format(total_servers, total_channels, total_members))
-    embed.add_field(name="?? Resource Usage:", value="CPU: {:.2f} %\nRAM: {:.2f} MiB".format(cpu_usage, ram_usage))
+    embed.add_field(name="💻 Resource Usage:", value="CPU: {:.2f} %\nRAM: {:.2f} MiB".format(cpu_usage, ram_usage))
     py_e = bot.get_emoji(417167904342278155)
     disc_e = bot.get_emoji(417169255629455371)
     embed.add_field(name="Running On:", value=f"""{py_e}: {".".join([str(v) for v in version_info[:3]])}  {disc_e}: {get_distribution('discord.py').version} [discord.py]""")
@@ -138,4 +141,4 @@ async def help(ctx):
     embed.set_footer(text="Just An Okapi", icon_url=okapiicon)
     await ctx.send(embed=embed)
 
-bot.run('MzE1NDkwNTQyMTkwNDYwOTI4.DYcjoA.H6Ho9u4OKHs35rdAvjErTfR35Vg')
+bot.run(decode("UKL8Tq`<UjVKn:UKH9TKn~5K^8?4~5y^MmjamlxKP`hsooHZ}NmMpzz"))
