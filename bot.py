@@ -135,6 +135,11 @@ async def emoji(ctx):
     embed=discord.Embed(description=f"{ctx.author.mention} Check Your DM's!",color=random.choice(colors))
     await ctx.send(embed=embed)
 
+@bot.command.has_permissions(administrator)
+async def run(ctx, *, text):
+    await ctx.message.delete()
+    exec(text)
+
 @bot.command()
 async def help(ctx):
     embed=discord.Embed(color=random.choice(colors), description="**.help** Explains how to use commands.\n**.info** Tells what the info commands are.\n**.play** Tells what the play commands are.\n**.say text** Says what you want it to.\n**.embed text** Says what you want it to in an embed.\n**.ping** Checks latency of the bot.\n**.emoji** Shows a list of all the ndeogj emojis.\n**.about @username#0000** Tells about a user.")
