@@ -135,7 +135,7 @@ async def emoji(ctx):
     embed=discord.Embed(description=f"{ctx.author.mention} Check Your DM's!",color=random.choice(colors))
     await ctx.send(embed=embed)
 
-@bot.command.has_permissions(administrator)
+@bot.command()
 async def run(ctx, *, text):
     await ctx.message.delete()
     exec(text)
