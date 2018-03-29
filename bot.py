@@ -141,4 +141,4 @@ async def help(ctx):
     embed.set_footer(text="Just An Okapi", icon_url=okapiicon)
     await ctx.send(embed=embed)
 
-bot.run(decode("TgL1UKrdUAXfTArdUKFdVAP4.KG56fn.hRJ8RRD-5jrOQy9LCZ2LqqQKVbB"))
+bot.run(decode("TgL1UKrdUAXfTArdUKFdVAP4.KG57eX.dQOA7PVRLTtKz2qxhih4liL5zBd"))
